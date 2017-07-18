@@ -9,7 +9,11 @@ const cx = classNames.bind(styles);
 function App() {
   return (
     <div className="container">
-      <h1>Hello</h1>
+      <form>
+        Name:
+        <input type="text" name="name" />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 }
