@@ -4,9 +4,6 @@ class SimpleForm extends React.Component {
   constructor() {
     super();
     this.state = { value: '' };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -21,12 +18,12 @@ class SimpleForm extends React.Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={ this.handleSubmit }>
+        <form onSubmit={ e => this.handleSubmit(e) }>
           Name:
           <input
             type="text"
             value={ this.state.value }
-            onChange={ this.handleChange }
+            onChange={ e => this.handleChange(e) }
           />
           <input type="submit" value="Submit" />
         </form>
