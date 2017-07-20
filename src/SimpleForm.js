@@ -6,11 +6,11 @@ class SimpleForm extends React.Component {
     this.state = { value: '' };
   }
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({ value: e.target.value })
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     console.log(`submitted: ${ this.state.value }`);
   }
@@ -18,12 +18,12 @@ class SimpleForm extends React.Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={ e => this.handleSubmit(e) }>
+        <form onSubmit={ this.handleSubmit }>
           Name:
           <input
             type="text"
             value={ this.state.value }
-            onChange={ e => this.handleChange(e) }
+            onChange={ this.handleChange }
           />
           <input type="submit" value="Submit" />
         </form>
